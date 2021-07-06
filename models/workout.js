@@ -29,15 +29,25 @@ const WorkoutSchema = new Schema({
             sets: {
                 type: Number,
             },
+            distance: {
+                type: Number,
+            },
         },
     ],
 });
 
-WorkoutSchema.methods.totalDuration = function () {
-    const totalTime = this.exercises.reduce(
-        (accumulator, curVal) => accumulator + curVal
-    );
-};
+// WorkoutSchema.methods.totalDuration = function () {
+//     return this.exercises.reduce(
+//         (accumulator, currentVal) => accumulator + currentVal.duration,
+//         0
+//     );
+// };
+
+let workoutSchemaVirtual = WorkoutSchema.virtual("totalDuration");
+
+workoutSchemaVirtual.get(function () {
+    return this.exercises.reduce((acc, curr) => acc + curr.duration, 0);
+});
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
