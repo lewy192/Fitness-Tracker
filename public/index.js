@@ -1,6 +1,7 @@
 init();
 
 async function init() {
+    console.log("ere ");
     if (location.search.split("=")[1] === undefined) {
         const workout = await API.getLastWorkout();
         if (workout) {
