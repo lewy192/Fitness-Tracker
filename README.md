@@ -16,7 +16,7 @@ From this project I learnt I learnt noSQL, how different it is to SQL and how yo
 
 ## Live Link
 
-[Here] you can find the deployed application
+[Here](https://warm-badlands-74001.herokuapp.com/) you can find the deployed application.
 
 ## Screenshot
 
