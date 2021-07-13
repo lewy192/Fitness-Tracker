@@ -23,6 +23,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
     try {
         const { body: workoutBody } = req;
+        console.log(req.body);
         const newWorkout = await Workout.create(workoutBody);
         console.log(newWorkout);
         res.status(200).json(newWorkout);
