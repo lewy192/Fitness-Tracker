@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 mongoose.connect(
     process.env.MONGODB_URI ||
-        `mongodb+srv://lewyRoot:${process.env.DB_PW}@coursecluster.q08bn.mongodb.net/Workout-Tracker?retryWrites=true&w=majority`,
+        ,
     { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 );
 
